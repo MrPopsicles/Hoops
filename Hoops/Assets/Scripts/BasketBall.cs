@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class BasketBall : MonoBehaviour
 {
     public static bool hasBeenShot;
+    public static bool zoomIn = false;
 
     private Vector2 zeroVector = new Vector2(0, 0);
     private Rigidbody2D rb;
@@ -33,5 +34,15 @@ public class BasketBall : MonoBehaviour
     private void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        zoomIn = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.tag == "ZoomInTrigger")
+        {
+            Debug.Log("We have zoomed in");
+            zoomIn = true;
+        }
     }
 }

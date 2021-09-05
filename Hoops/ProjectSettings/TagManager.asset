@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Basketball
   - Floor
+  - ZoomInTrigger
   layers:
   - Default
   - TransparentFX
